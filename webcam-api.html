@@ -7,7 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="main"></div>
+    <div class="container" value="0">
+        <div class="main-location" value="0"></div>
+        <div class="main-video" value="0"></div>
+    </div>
+    <div class="container" value="1">
+        <div class="main-location" value="1"></div>
+        <div class="main-video" value="1"></div>
+    </div>
+    <div class="container" value="2">
+        <div class="main-location" value="2"></div>
+        <div class="main-video" value="2"></div>
+    </div>
 
     <button id="begin">Find</button>
     <!-- Script for jQuery -->
@@ -24,6 +35,7 @@
             // API URL
             var queryURL = "https://webcamstravel.p.rapidapi.com/webcams/list/country=US?show=webcams:player";
 
+            // Requesting data from webcam.travel API
             $.ajax({
                 url: queryURL,
                 method: "GET",
@@ -35,9 +47,12 @@
                 console.log(response);
                 // Varibale creating a new div
                 var $videoDisplay = $("<iframe>");
-                var $locationDisplay = $("<h3>")
-                for (var i = 0; i < 10; i++) {
-                // Variable for finding emebd links and locations for each webcam
+                var $locationDisplay = $("<h3>");
+                var $videoDisplayElem = $(".main-video").attr("value", [i]);
+                var $locationDisplayElem = $(".main-location").attr("value", [i]);
+                // Looping through each item from result
+                for (var i = 0; i < 3; i++) {
+                // Variables for finding emebd links and locations for each webcam
                 var embedDay = response.result.webcams[i].player.day.embed;
                 var locationCam = response.result.webcams[i].title;
                 var locationCamJSON = JSON.stringify(locationCam);
@@ -45,8 +60,8 @@
                 $videoDisplay.attr("src", embedDay);
                 $locationDisplay.text(locationCamJSON);
                 // Appending elements to #main
-                $("#main").append($locationDisplay);
-                $("#main").append($videoDisplay);
+                $($videoDisplayElem).html($videoDisplay);
+                $($locationDisplayElem).html($locationDisplay);
                 console.log(embedDay);
                 }
             }); 
