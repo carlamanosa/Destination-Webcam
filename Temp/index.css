@@ -1,0 +1,15 @@
+/* Color Scheme
+    Golden: #FFA600;
+    Red Flame: #FF3B00;
+    Deep Cyan: #009BA5;
+    Paper: #F7F7F7;
+    Jet: #303030; */
+
+body {
+    background-color: #F7F7F7;
+    color: #303030;
+}
+
+.nav-wrapper {
+    background-color: #FF3B00;
+}
