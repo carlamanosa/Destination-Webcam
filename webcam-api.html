@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="main">
-        
-    </div>
+    <div id="main"></div>
+
+    <button id="begin">Find</button>
     <!-- Script for jQuery -->
     <script
     src="https://code.jquery.com/jquery-3.4.1.js"
@@ -19,7 +19,7 @@
         // Function for displaying webcam feeds
         function displayWebcam() {
             // API URL
-            var queryURL = "https://webcamstravel.p.rapidapi.com/webcams/list/country=DE?show=webcams:image,location,player";
+            var queryURL = "https://webcamstravel.p.rapidapi.com/webcams/list/country=US?show=webcams:player";
 
             $.ajax({
                 url: queryURL,
@@ -28,20 +28,30 @@
 	                    "x-rapidapi-host": "webcamstravel.p.rapidapi.com",
 	                    "x-rapidapi-key": "a1162ee7c6mshc800ab83c077685p1dfbd0jsn121aa30497f1"}
             }).then(function(response) {
+                // Console logging response
+                console.log(response);
                 // Varibale creating a new div
-                var $display = $("<iframe>");
+                var $videoDisplay = $("<iframe>");
+                var $locationDisplay = $("<h3>")
                 for (var i = 0; i < 10; i++) {
-                // Variable for finding emebd links for each webcam
-                var embedDay = response.result.webcams[i].player.lifetime.embed;
-                $display.attr("src", embedDay);
-                // Appending div to #main
-                $("#main").append($display);
+                // Variable for finding emebd links and locations for each webcam
+                var embedDay = response.result.webcams[i].player.day.embed;
+                var locationCam = response.result.webcams[i].title;
+                var locationCamJSON = JSON.stringify(locationCam);
+                // Adding data to elements
+                $videoDisplay.attr("src", embedDay);
+                $locationDisplay.text(locationCamJSON);
+                // Appending elements to #main
+                $("#main").append($locationDisplay);
+                $("#main").append($videoDisplay);
                 console.log(embedDay);
                 }
             }); 
         };
         // Calling function
-        displayWebcam();
+        $("#begin").on("click", displayWebcam);
+
+        
     </script>
             
 </body>
