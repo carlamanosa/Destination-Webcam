@@ -18,6 +18,9 @@
     <script type="text/javascript">
         // Function for displaying webcam feeds
         function displayWebcam() {
+            // Clear contents of div for each click
+            $("#main").empty();
+            
             // API URL
             var queryURL = "https://webcamstravel.p.rapidapi.com/webcams/list/country=US?show=webcams:player";
 
