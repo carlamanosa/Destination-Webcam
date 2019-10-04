@@ -90,7 +90,7 @@ var map;
       var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?";
 
       var queryParams = $.param({
-          address:location,
+          address: location,
           key: 'AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg'
       })
   
