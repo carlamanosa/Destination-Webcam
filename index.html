@@ -32,7 +32,7 @@
             </div>
 
             <!-- Main search box col -->
-            <div class="col s12 m6 searchBox">  
+            <div class="col s12 m6">  
 
                 <!-- Rand Btns Row -->
                 <div class="row">
@@ -44,7 +44,7 @@
 
                 <!-- Google Location Search -->
                 <div class="row">
-                    <div class="col s12">
+                    <div class="col s12 searchBox">
                         <!-- Google Map Search Bar -->
                         <input class="form-control" id="search" type="text" placeholder="Search..." />
                     </div>
@@ -65,8 +65,39 @@
         <!-- End Row 1 -->
 
         <!-- Row 2: Feed Frames -->
+<<<<<<< HEAD
         <div class="row" id="main">
             
+=======
+        <div class="row">
+
+            <!-- Feed 1 -->
+            <div class="col s12 m4 webcam-display">
+                <div class="container feed">
+                    <div id="main-location0"></div>
+                    <div id="main-video0"></div>
+                </div>                
+            </div>
+
+            <!-- Feed 2 -->
+            <div class="col s12 m4 webcam-display">
+                <div class="container feed">
+                    <div id="main-location1"></div>
+                    <div id="main-video1"></div>
+                </div>                    
+            </div>
+
+            <!-- Feed 3 -->
+            <div class="col s12 m4 webcam-display">
+                <div class="container feed">
+                    <div id="main-location2"></div>
+                    <div id="main-video2"></div>
+                </div>                
+            </div>
+
+            <button id="begin">Find</button>
+
+>>>>>>> c9bca6f76e3b3a4b2c39a6f78015e9a7acd9c119
         </div>
         <!-- End Row 2 -->
         <button id="begin">Find</button>
@@ -104,7 +135,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <!-- Google Maps scripts. -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg&callback=createMap&libraries=places" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg&callback=initMap&libraries=places" async defer></script>
     <!-- Our JS Link -->
     <script src="index.js"></script>
     <script type="text/javascript"></script>
