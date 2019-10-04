@@ -57,11 +57,23 @@ $("#begin").on("click", displayWebcam);
 //                                           Google Maps Stuff
 //----------------------------------------------------------------------------------------------------------------//
 
+var queryURL = "https://maps.googleapis.com/api/geocode/json?";
+var queryParams = $.params({
+  geometry: 
+})
 
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function (response) {  
+  console.log(response);
+  console.log(response.results[0].geometry.lat);
+  console.log(response.results[0].geometry.lng);
+});
 
 var map;
 
-function createMap () {
+function initMap () {
   var options = {
     center: { lat: 43.654, lng: -79.383 },
     zoom: 10
