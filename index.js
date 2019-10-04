@@ -82,6 +82,7 @@ $.ajax({
 });
 
 var map;
+var infoWindow;
   geocode();
 
   function geocode() {
@@ -106,6 +107,35 @@ var map;
 
       })
   }
+
+  function createMap () {
+    var options = {
+      center: { lat: 43.654, lng: -79.383 },
+      zoom: 10
+    };
+  
+    map = new google.maps.Map(document.getElementById('map'), options);
+    infoWindow = new google.maps.InfoWindow;
+    
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (p) {
+        var position = {
+          lat: p.coords.latitude,
+          lng: p.coords.longitude
+        };
+  
+        infoWindow.setPosition(position);
+        infoWindow.setContent('Your location!');
+        infoWindow.open(map);
+        map.setCenter(position);
+      }, function () {
+        handleLocationError('Geolocation service failed', map.getCenter());
+      });
+    } else {
+      handleLocationError('No geolocation available.', map.getCenter());
+    }
+  }
+  
 
 
 
