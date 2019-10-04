@@ -6,7 +6,7 @@
 // Function for displaying webcam feeds
 function displayWebcam() {
   // API URL
-  var queryURL = "https://webcamstravel.p.rapidapi.com/webcams/list/nearby=46.54,7.98,5?show=webcams:player";
+  var queryURL = "https://webcamstravel.p.rapidapi.com/webcams/list/nearby="+latitudeLoc+","+longitudeLoc+",50?show=webcams:player";
 
   // Requesting data from webcam.travel API
   $.ajax({
