@@ -64,8 +64,8 @@ $("#begin").on("click", displayWebcam);
 //                                           Google Maps Stuff
 //----------------------------------------------------------------------------------------------------------------//
 
-var latitudeLoc = "";
-var longitudeLoc = "";
+var latitudeLoc;
+var longitudeLoc;
 
 var queryURL = "https://maps.googleapis.com/api/geocode/json?";
 // var queryParams = $.params({
