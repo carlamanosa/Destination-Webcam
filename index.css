@@ -8,12 +8,54 @@ Jet: #303030; */
 body {
     background-color: #F7F7F7;
     color: #303030;
+    text-align: center;
 }
 
 .nav-wrapper {
     background-color: #FF3B00;
+    color: #F7F7F7;
+    font-size: 2rem;
+}
+
+.container {
+    width: 95%;
+}
+
+.searchBox {
+    background-color: #FFA600;
+    margin-top: 15px;
+    height: 50vh;
+    border: solid 1px #009BA5;
+}
+
+.button {
+    background-color: #009BA5;
+    font-size: 2rem;
+    color: #F7F7F7;
+    border: dotted 6px #303030;
+    border-radius: 50%;
+    height: 15vh;
+    margin-bottom: 2rem;
 }
 
 #map {
-    height: 500px;
+    height: 50vh;
+    margin-top: 15px;
+    border: solid 2px #303030;
   }
+
+.feed {
+    background-color: #009BA5;
+    border: solid 1px #303030;
+    height: 50vh;
+    margin: 2%;
+}
+
+#randBtnDiv {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.btnText {
+    margin-top: 8%;
+}
