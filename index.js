@@ -64,75 +64,31 @@ $("#begin").on("click", displayWebcam);
 //                                           Google Maps Stuff
 //----------------------------------------------------------------------------------------------------------------//
 
-var queryURL = "https://maps.googleapis.com/api/geocode/json?";
-var queryParams = $.params({
-  geometry: 
-})
-
-$.ajax({
-  url: queryURL,
-  method: "GET"
-}).then(function (response) {  
-  console.log(response);
-  console.log(response.results[0].geometry.lat);
-  console.log(response.results[0].geometry.lng);
-});
-
 var map;
+  geocode();
 
-function initMap () {
-  var options = {
-    center: { lat: 43.654, lng: -79.383 },
-    zoom: 10
-  };
+  function geocode() {
+      var location = "2008 Thackery st, West Covina, CA";
 
-  map = new google.maps.Map(document.getElementById('map'), options);
+      var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?";
 
-  var input = document.getElementById('search');
-  var searchBox = new google.maps.places.SearchBox(input);
-
-  map.addListener('bounds_changed', function() {
-    searchBox.setBounds(map.getBounds());
-  });
-
-var markers = [];
+      var queryParams = $.param({
+          address:location,
+          key: 'AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg'
+      })
   
-  searchBox.addListener('places_changed', function () {
+      $.ajax({
+          url: queryURL + queryParams,
+          method: "GET"
+      }).then(function (response) {
+          console.log(response);
+          var latitudeLoc = response.results[0].geometry.location.lat;
+          var longitudeLoc = response.results[0].geometry.location.lng;
+          console.log(latitudeLoc);
+          console.log(longitudeLoc);
 
-    var places = searchBox.getPlaces();
-
-    if (places.length == 0)
-      return;
-
-    markers.forEach(function (m) { m.setMap(null); });
-    markers = [];
-
-    
-
-    var bounds = new google.maps.LatLngBounds();
-    places.forEach(function(p) {
-
-        console.log("wtf");
-
-      if (!p.geometry)
-        return;
-
-      markers.push(new google.maps.Marker({
-        map: map,
-        title: p.name,
-        position: p.geometry.location
-      }));
-
-
-      if (p.geometry.viewport)
-        bounds.union(p.geometry.viewport);
-      else
-        bounds.extend(p.geometry.location);
-    });
-    
-    map.fitBounds(bounds);
-  });
-}
+      })
+  }
 
 
 
