@@ -64,6 +64,9 @@ $("#begin").on("click", displayWebcam);
 //                                           Google Maps Stuff
 //----------------------------------------------------------------------------------------------------------------//
 
+var latitudeLoc = "";
+var longitudeLoc = "";
+
 var queryURL = "https://maps.googleapis.com/api/geocode/json?";
 // var queryParams = $.params({
 //   geometry: 
@@ -96,8 +99,8 @@ var map;
           method: "GET"
       }).then(function (response) {
           console.log(response);
-          var latitudeLoc = response.results[0].geometry.location.lat;
-          var longitudeLoc = response.results[0].geometry.location.lng;
+          latitudeLoc = response.results[0].geometry.location.lat;
+          longitudeLoc = response.results[0].geometry.location.lng;
           console.log(latitudeLoc);
           console.log(longitudeLoc);
 
