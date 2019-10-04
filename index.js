@@ -5,47 +5,51 @@
 
 // Function for displaying webcam feeds
 function displayWebcam() {
-    // Clear contents of div for each click
-    $("#main").empty();
+  // Clear contents of div for each click
+  $("#main").empty();
+  
+  // API URL
+  var queryURL = "https://webcamstravel.p.rapidapi.com/webcams/list/country=US?show=webcams:player";
 
-    // API URL
-    var queryURL = "https://webcamstravel.p.rapidapi.com/webcams/list/country=US?show=webcams:player";
-
-    // Requesting data from webcam.travel API
-    $.ajax({
-        url: queryURL,
-        method: "GET",
-        headers: {
+  // Requesting data from webcam.travel API
+  $.ajax({
+      url: queryURL,
+      method: "GET",
+      headers: {
             "x-rapidapi-host": "webcamstravel.p.rapidapi.com",
-            "x-rapidapi-key": "a1162ee7c6mshc800ab83c077685p1dfbd0jsn121aa30497f1"
-        }
-    }).then(function (response) {
-        // Console logging response
-        console.log(response);
-        // Varibale creating a HTML elements
-        var $videoDisplay = $("<iframe>");
-        var $locationDisplay = $("<h3>");
-        // Variables creating 
-        var $videoDisplayElem = $(".main-video").val([i]);
-        var $locationDisplayElem = $(".main-location").val([i]);
-        // Variables for finding emebd links and locations for each webcam
-        var embedDay = response.result.webcams[i].player.day.embed;
-        var locationCam = response.result.webcams[i].title;
-        var locationCamJSON = JSON.stringify(locationCam);
-        // Looping through each item from result
-        for (var i = 0; i < 3; i++) {
-            // Adding data to elements
-            $videoDisplay.attr("src", embedDay);
-            $locationDisplay.text(locationCamJSON);
-            // Appending elements to #main
-            $($videoDisplayElem).html($videoDisplay);
-            $($locationDisplayElem).html($locationDisplay);
-            console.log(embedDay);
-        }
-    });
+            "x-rapidapi-key": "a1162ee7c6mshc800ab83c077685p1dfbd0jsn121aa30497f1"}
+  }).then(function(response) {
+      // Console logging response
+      console.log(response);
+      $("body").empty();
+      // Looping through each item from result
+      for (var i = 0; i < 5; i++) {
+          // Function creating new HTML elements
+          function webcamDiv(i) {
+              // Variables for finding emebd links and locations for each webcam
+              var embedDay = response.result.webcams[i].player.day.embed;
+              var locationCam = response.result.webcams[i].title;
+              var locationCamJSON = JSON.stringify(locationCam);
+              // Creating HTML elements
+              var $newDiv = $("<div>");
+              var $newVideo = $("<iframe>");
+              var $newLocation = $("<h3>");
+              // Attaching data to elements
+              $newVideo.attr("src", embedDay);
+              $newLocation.text(locationCamJSON);
+              // Appending elements
+              $newDiv.append($newVideo);
+              $newDiv.append($newLocation);
+              $("body").append($newDiv);
+          };
+          webcamDiv(i);
+      };
+  }); 
 };
 // Calling function
 $("#begin").on("click", displayWebcam);
+
+
 
 
 
