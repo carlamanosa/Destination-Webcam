@@ -25,23 +25,23 @@ function displayWebcam() {
               // Variables for finding emebd links and locations for each webcam
               var embedDay = response.result.webcams[i].player.day.embed;
               var locationCam = response.result.webcams[i].title;
-              var locationCamJSON = JSON.stringify(locationCam);
               // Creating HTML elements
               var $newDiv = $("<div>");
               var $newVideo = $("<iframe>");
-              var $newLocation = $("<h3>");
+              var $newLocation = $("<h5>");
               // Attaching data to elements
               // Video
               $newVideo.attr("src", embedDay);
               $newVideo.attr("value", i);
               $newVideo.attr("class", "main-video")
               // Location Header
-              $newLocation.text(locationCamJSON);
+              $newLocation.text(locationCam);
               $newLocation.attr("value", i);
               $newLocation.attr("class", "main-location")
               // Appending elements
               $newDiv.append($newVideo);
               $newDiv.append($newLocation);
+              $newDiv.append($newVideo);
               $newDiv.attr("class", "col s12 m4 feed");
               $("#main").append($newDiv);
           };
@@ -63,6 +63,20 @@ $("#begin").on("click", displayWebcam);
 //----------------------------------------------------------------------------------------------------------------//
 //                                           Google Maps Stuff
 //----------------------------------------------------------------------------------------------------------------//
+
+var queryURL = "https://maps.googleapis.com/api/geocode/json?";
+// var queryParams = $.params({
+//   geometry: 
+// })
+
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function (response) {  
+  console.log(response);
+  console.log(response.results[0].geometry.lat);
+  console.log(response.results[0].geometry.lng);
+});
 
 var map;
   geocode();
