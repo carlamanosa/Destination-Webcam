@@ -31,12 +31,19 @@ function displayWebcam() {
               var $newVideo = $("<iframe>");
               var $newLocation = $("<h3>");
               // Attaching data to elements
+              // Video
               $newVideo.attr("src", embedDay);
+              $newVideo.attr("value", i);
+              $newVideo.attr("class", "main-video")
+              // Location Header
               $newLocation.text(locationCamJSON);
+              $newLocation.attr("value", i);
+              $newLocation.attr("class", "main-location")
               // Appending elements
               $newDiv.append($newVideo);
               $newDiv.append($newLocation);
-              $("body").append($newDiv);
+              $newDiv.attr("class", "col s12 m4 feed");
+              $("#main").append($newDiv);
           };
           webcamDiv(i);
       };
