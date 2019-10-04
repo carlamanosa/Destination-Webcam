@@ -6,13 +6,15 @@ Paper: #F7F7F7;
 Jet: #303030; */
 
 body {
+    background-image: url(Images/clear-ocean-background.jpg);
+    background-size: cover;
     background-color: #F7F7F7;
     color: #303030;
     text-align: center;
 }
 
 .nav-wrapper {
-    background-color: #FF3B00;
+    background-color: #FFA600;
     color: #F7F7F7;
     font-size: 2rem;
 }
@@ -22,14 +24,14 @@ body {
 }
 
 .searchBox {
-    background-color: #FFA600;
+    background-color: #F7F7F7;
     margin-top: 15px;
-    height: 50vh;
+    height: 10vh;
     border: solid 1px #009BA5;
 }
 
 .button {
-    background-color: #009BA5;
+    background-color: #FF3B00;
     font-size: 2rem;
     color: #F7F7F7;
     border: dotted 6px #303030;
@@ -45,7 +47,7 @@ body {
   }
 
 .feed {
-    background-color: #009BA5;
+    background-color: #F7F7F7;
     border: solid 1px #303030;
     height: 50vh;
     margin: 2%;
