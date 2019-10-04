@@ -16,7 +16,7 @@
     <!-- Nav Bar Header with our Website's Name -->
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">Destination (Travel) Webcam</a>
+            <a href="#" class="center">Destination (Travel) Webcam</a>
         </div>
     </nav>
 
@@ -32,36 +32,32 @@
             </div>
 
             <!-- Main search box col -->
-            <div class="col s12 m6">                
+            <div class="col s12 m6 searchBox">  
 
-                <!-- Random Button Div -->
-                <div id="randBtnDiv">
-                    <button id="begin">Find</button>
-                </div>
-
-                <!-- Main Search Box -->
-                <div class="searchBox" id="mainSearchBoxDiv">
-
-                    <!-- Google Map Search Bar -->
-                    <input class="form-control" id="search" type="text" placeholder="Search..." />
-
-                    <!-- Advanced Search Modalish Thing -->
-                    <div class="searchBox" id="advancedSearchBoxDiv">
-
-
-
-
-
-
-
-
-
-
+                <!-- Rand Btns Row -->
+                <div class="row">
+                    <!-- Random Button -->
+                    <div id="randBtnDiv">
+                        <a class="waves-effect waves-light btn-large button"><div class="btnText">Random</div></a>
                     </div>
-
-
                 </div>
 
+                <!-- Google Location Search -->
+                <div class="row">
+                    <div class="col s12">
+                        <!-- Google Map Search Bar -->
+                        <input class="form-control" id="search" type="text" placeholder="Search..." />
+                    </div>
+                    <!-- Advanced Search Dropdown Trigger -->
+                    <a class='dropdown-trigger btn-flat left' href='#' data-target='dropdown1'>Advanced Search</a>
+
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li><a href="#!">one</a></li>
+                        <li><a href="#!">two</a></li>
+                        <li><a href="#!">three</a></li>
+                    </ul>
+                </div>
             </div>
             <!-- End Main Search Box Div-->
             
@@ -73,7 +69,7 @@
 
             <!-- Feed 1 -->
             <div class="col s12 m4">
-                <div class="container" value="0">
+                <div class="container feed" value="0">
                     <div class="main-location" value="0"></div>
                     <div class="main-video" value="0"></div>
                 </div>                
@@ -81,7 +77,7 @@
 
             <!-- Feed 2 -->
             <div class="col s12 m4">
-                <div class="container" value="1">
+                <div class="container feed" value="1">
                     <div class="main-location" value="1"></div>
                     <div class="main-video" value="1"></div>
                 </div>                    
@@ -89,11 +85,13 @@
 
             <!-- Feed 3 -->
             <div class="col s12 m4">
-                <div class="container" value="2">
+                <div class="container feed" value="2">
                     <div class="main-location" value="2"></div>
                     <div class="main-video" value="2"></div>
                 </div>                
             </div>
+
+            <button id="begin">Find</button>
 
         </div>
         <!-- End Row 2 -->
