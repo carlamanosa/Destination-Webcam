@@ -5,9 +5,6 @@
 
 // Function for displaying webcam feeds
 function displayWebcam() {
-  // Clear contents of div for each click
-  $("#main").empty();
-  
   // API URL
   var queryURL = "https://webcamstravel.p.rapidapi.com/webcams/list/country=US?show=webcams:player";
 
@@ -21,9 +18,8 @@ function displayWebcam() {
   }).then(function(response) {
       // Console logging response
       console.log(response);
-      $("body").empty();
       // Looping through each item from result
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 3; i++) {
           // Function creating new HTML elements
           function webcamDiv(i) {
               // Variables for finding emebd links and locations for each webcam
