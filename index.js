@@ -26,8 +26,8 @@ function displayWebcam() {
         var $videoDisplay = $("<iframe>");
         var $locationDisplay = $("<h3>");
         // Variables creating 
-        var $videoDisplayElem = $(".main-video").val([i]);
-        var $locationDisplayElem = $(".main-location").val([i]);
+        var $videoDisplayElem = $("#main-video" + i);
+        var $locationDisplayElem = $("#main-location" + i);
         // Variables for finding emebd links and locations for each webcam
         var embedDay = response.result.webcams[i].player.day.embed;
         var locationCam = response.result.webcams[i].title;
