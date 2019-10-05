@@ -7,8 +7,8 @@ Jet: #303030; */
 
 body {
     background-image: url(Images/clear-ocean-background.jpg);
-    background-size: cover;
-    background-color: #F7F7F7;
+    /* background-size: cover;
+    background-color: #F7F7F7; */
     color: #303030;
     text-align: center;
 }
@@ -60,4 +60,10 @@ body {
 
 .btnText {
     margin-top: 8%;
+}
+
+#parallax-content{
+    padding-top: 84px;
+    background: rgba(0,0,0,0.5);
+    color: white;
 }
