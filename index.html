@@ -20,8 +20,19 @@
         </div>
     </nav>
 
+    <!-- First container/ landing -->
+
+        <div class="section" id="start-section" >
+                <span><h2>See your destinations in real time</h2></span><br>
+                <p>Curiousity will only take you so far... </p>
+                <br>
+                <a href="#main-container" class="waves-effect waves-light btn-large">Start Search</a>
+        
+     </div>
+    <p></p>
+
     <!-- Grid system (main) container that creates our layout -->
-    <div class="container">
+    <div class="section white scrollspy" id="main-container">
 
         <!-- Row 1: search stuff and on >m screens, map -->
         <div class="row">
@@ -48,15 +59,6 @@
                         <!-- Google Map Search Bar -->
                         <input class="form-control" id="search" type="text" placeholder="Search..." />
                     </div>
-                    <!-- Advanced Search Dropdown Trigger -->
-                    <a class='dropdown-trigger btn-flat left' href='#' data-target='dropdown1'>Advanced Search</a>
-
-                    <!-- Dropdown Structure -->
-                    <ul id='dropdown1' class='dropdown-content'>
-                        <li><a href="#!">one</a></li>
-                        <li><a href="#!">two</a></li>
-                        <li><a href="#!">three</a></li>
-                    </ul>
                 </div>
             </div>
             <!-- End Main Search Box Div-->
@@ -65,14 +67,21 @@
         <!-- End Row 1 -->
 
         <!-- Row 2: Feed Frames -->
-        <div class="row" id="main">
-            
+        <div class="row main-feeds">
+            <div class="col s12 m4" id="main0"></div>
+            <div class="col s12 m4" id="main1"></div>
+            <div class="col s12 m4" id="main2"></div>
         </div>
         <!-- End Row 2 -->
         <button id="begin">Find</button>
 
     </div>
     <!-- End Main Container Div-->
+<p></p>
+    <!-- Starting bottom container -->
+    <div class="section" id="ending-section">
+        
+      </div>
 
     <!-- (BONUS) On Water Div-->
     <div class="row">
@@ -107,8 +116,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg&callback=initMap&libraries=places" async defer></script>
     <!-- Our JS Link -->
     <script src="index.js"></script>
-    <script type="text/javascript"></script>
-
+    
 </body>
 
 </html>

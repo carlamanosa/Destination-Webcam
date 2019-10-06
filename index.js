@@ -1,3 +1,6 @@
+
+$(document).ready(function () {
+
 //----------------------------------------------------------------------------------------------------------------//
 //                                           Webcam Display Stuff
 //----------------------------------------------------------------------------------------------------------------//
@@ -18,6 +21,11 @@ function displayWebcam() {
   }).then(function(response) {
       // Console logging response
       console.log(response);
+      // Looping through each prev display to clear it
+      for (var i = 0; i < 3; i++) {
+        var $whichMain = "#main" + i;
+        $($whichMain).empty();
+      }
       // Looping through each item from result
       for (var i = 0; i < 3; i++) {
           // Function creating new HTML elements
@@ -25,6 +33,7 @@ function displayWebcam() {
               // Variables for finding emebd links and locations for each webcam
               var embedDay = response.result.webcams[i].player.day.embed;
               var locationCam = response.result.webcams[i].title;
+              var $whichMain = "#main" + i;
               // Creating HTML elements
               var $newDiv = $("<div>");
               var $newVideo = $("<iframe>");
@@ -42,8 +51,8 @@ function displayWebcam() {
               $newDiv.append($newVideo);
               $newDiv.append($newLocation);
               $newDiv.append($newVideo);
-              $newDiv.attr("class", "col s12 m4 feed");
-              $("#main").append($newDiv);
+              $newDiv.attr("class", "feed");
+              $($whichMain).append($newDiv);
           };
           webcamDiv(i);
       };
@@ -66,47 +75,48 @@ $("#begin").on("click", displayWebcam);
 
 var latitudeLoc;
 var longitudeLoc;
-
 var queryURL = "https://maps.googleapis.com/api/geocode/json?";
 // var queryParams = $.params({
-//   geometry: 
+//   geometry:
 // })
-
 $.ajax({
-  url: queryURL,
-  method: "GET"
-}).then(function (response) {  
-  console.log(response);
-  console.log(response.results[0].geometry.lat);
-  console.log(response.results[0].geometry.lng);
+ url: queryURL,
+ method: "GET"
+}).then(function (response) {
+ console.log(response);
+ console.log(response.results[0].geometry.lat);
+ console.log(response.results[0].geometry.lng);
 });
-
 var map;
-  geocode();
-
-  function geocode() {
-      var location = "2008 Thackery st, West Covina, CA";
-
-      var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?";
-
-      var queryParams = $.param({
-          address: location,
-          key: 'AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg'
-      })
-  
-      $.ajax({
-          url: queryURL + queryParams,
-          method: "GET"
-      }).then(function (response) {
-          console.log(response);
-          latitudeLoc = response.results[0].geometry.location.lat;
-          longitudeLoc = response.results[0].geometry.location.lng;
-          console.log(latitudeLoc);
-          console.log(longitudeLoc);
-
-      })
+var infoWindow;
+ geocode();
+ function geocode() {
+     var location = "2008 Thackery st, West Covina, CA";
+     var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?";
+     var queryParams = $.param({
+         address: location,
+         key: 'AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg'
+     })
+     $.ajax({
+         url: queryURL + queryParams,
+         method: "GET"
+     }).then(function (response) {
+         console.log(response);
+         latitudeLoc = response.results[0].geometry.location.lat;
+         longitudeLoc = response.results[0].geometry.location.lng;
+         console.log(latitudeLoc);
+         console.log(longitudeLoc);
+     })
+ }
+ createMap();
+ function createMap () {
+   var options = {
+     center: { lat: 43.654, lng: -79.383 },
+     zoom: 10
+   };
+   map = new google.maps.Map(document.getElementById('map'), options);
+   infoWindow = new google.maps.InfoWindow;
   }
-
 
 
 
@@ -119,6 +129,12 @@ var map;
 //----------------------------------------------------------------------------------------------------------------//
 //                                           Other Stuff
 //----------------------------------------------------------------------------------------------------------------//
+  
+// Parallax Initialize
+$('.parallax').parallax();
+
+// Scrollspy Initialize
+$('.scrollspy').scrollSpy();
 
 
 
@@ -126,4 +142,5 @@ var map;
 
 
 
-
+  
+})
