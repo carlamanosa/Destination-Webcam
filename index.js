@@ -1,5 +1,5 @@
 
-
+$(document).ready(function () {
 //----------------------------------------------------------------------------------------------------------------//
 //                                           Webcam Display Stuff
 //----------------------------------------------------------------------------------------------------------------//
@@ -20,6 +20,11 @@ function displayWebcam() {
   }).then(function(response) {
       // Console logging response
       console.log(response);
+      // Looping through each prev display to clear it
+      for (var i = 0; i < 3; i++) {
+        var $whichMain = "#main" + i;
+        $($whichMain).empty();
+      }
       // Looping through each item from result
       for (var i = 0; i < 3; i++) {
           // Function creating new HTML elements
@@ -27,6 +32,7 @@ function displayWebcam() {
               // Variables for finding emebd links and locations for each webcam
               var embedDay = response.result.webcams[i].player.day.embed;
               var locationCam = response.result.webcams[i].title;
+              var $whichMain = "#main" + i;
               // Creating HTML elements
               var $newDiv = $("<div>");
               var $newVideo = $("<iframe>");
@@ -44,8 +50,8 @@ function displayWebcam() {
               $newDiv.append($newVideo);
               $newDiv.append($newLocation);
               $newDiv.append($newVideo);
-              $newDiv.attr("class", "col s12 m4 feed");
-              $("#main").append($newDiv);
+              $newDiv.attr("class", "feed");
+              $($whichMain).append($newDiv);
           };
           webcamDiv(i);
       };
@@ -121,12 +127,18 @@ var map;
 //----------------------------------------------------------------------------------------------------------------//
 //                                           Other Stuff
 //----------------------------------------------------------------------------------------------------------------//
+  
+// Parallax Initialize
+$('.parallax').parallax();
+
+// Scrollspy Initialize
+$('.scrollspy').scrollSpy();
 
 
-      
 
 
 
 
 
-
+  
+})
