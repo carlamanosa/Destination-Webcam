@@ -19,8 +19,17 @@ body {
     font-size: 2rem;
 }
 
+#starting-section {
+    height: 900px;
+    padding-top: 150px;
+    color: whitesmoke;
+    backdrop-filter: blur(10px);
+}
+
+
 #main-container {
-    
+    background-color: white;
+    width: 100%;
 }
 
 .searchBox {
@@ -60,13 +69,5 @@ body {
 
 .btnText {
     margin-top: 8%;
-}
-
-
-
-#starting-section {
-    height: 600px;
-    padding-top: 150px;
-    color: whitesmoke;
 }
 
