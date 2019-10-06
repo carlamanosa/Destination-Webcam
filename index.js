@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+
 //----------------------------------------------------------------------------------------------------------------//
 //                                           Webcam Display Stuff
 //----------------------------------------------------------------------------------------------------------------//
@@ -115,6 +116,7 @@ var infoWindow;
    };
    map = new google.maps.Map(document.getElementById('map'), options);
    infoWindow = new google.maps.InfoWindow;
+  }
 
 
 
