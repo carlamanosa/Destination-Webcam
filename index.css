@@ -6,10 +6,10 @@ Paper: #F7F7F7;
 Jet: #303030; */
 
 body {
-    background-image: url(Images/clear-ocean-background.jpg);
-    background-size: cover;
-    background-color: #F7F7F7;
-    color: #303030;
+    background-image: url(Images/starting-section\ background\ image.jpg);
+    /* background-size: cover;
+    background-color: #F7F7F7; */
+    color: whitesmoke;
     text-align: center;
 }
 
@@ -19,8 +19,8 @@ body {
     font-size: 2rem;
 }
 
-.container {
-    width: 95%;
+#main-container {
+    
 }
 
 .searchBox {
@@ -61,3 +61,12 @@ body {
 .btnText {
     margin-top: 8%;
 }
+
+
+
+#starting-section {
+    height: 600px;
+    padding-top: 150px;
+    color: whitesmoke;
+}
+

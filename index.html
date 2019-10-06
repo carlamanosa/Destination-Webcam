@@ -20,8 +20,19 @@
         </div>
     </nav>
 
+    <!-- First container/ landing -->
+
+        <div class="section" id="start-section" >
+                <span><h2>See your destinations in real time</h2></span><br>
+                <p>Curiousity will only take you so far... </p>
+                <br>
+                <a href="#main-container" class="waves-effect waves-light btn-large">Start Search</a>
+        
+     </div>
+    <p></p>
+
     <!-- Grid system (main) container that creates our layout -->
-    <div class="container">
+    <div class="section white scrollspy" id="main-container">
 
         <!-- Row 1: search stuff and on >m screens, map -->
         <div class="row">
@@ -73,6 +84,11 @@
 
     </div>
     <!-- End Main Container Div-->
+<p></p>
+    <!-- Starting bottom container -->
+    <div class="section" id="ending-section">
+        
+      </div>
 
     <!-- (BONUS) On Water Div-->
     <div class="row">
@@ -108,6 +124,22 @@
     <!-- Our JS Link -->
     <script src="index.js"></script>
     <script type="text/javascript"></script>
+
+
+
+    <!-- Parallax Initialize -->
+    <script>
+$(document).ready(function(){
+  $('.parallax').parallax();
+});
+    </script>
+
+<!-- Scrollspy Initialize-->
+    <script>
+    $(document).ready(function(){
+  $('.scrollspy').scrollSpy();
+});
+    </script>
 
 </body>
 
