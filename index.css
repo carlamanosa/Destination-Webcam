@@ -19,10 +19,6 @@ body {
     font-size: 2rem;
 }
 
-#main-container {
-    
-}
-
 .searchBox {
     background-color: #F7F7F7;
     margin-top: 15px;
@@ -47,10 +43,20 @@ body {
   }
 
 .feed {
-    background-color: #F7F7F7;
+    background-color: #FFA600;
     border: solid 1px #303030;
-    height: 50vh;
-    margin: 2%;
+    color: #009BA5;
+    margin: 1%;
+    min-block-size: 35vh;
+}
+
+.main-location {
+    margin: 1rem;
+}
+
+.main-video {
+    padding: 1%;
+    margin: 2rem auto;
 }
 
 #randBtnDiv {
@@ -62,11 +68,9 @@ body {
     margin-top: 8%;
 }
 
-
-
 #starting-section {
     height: 600px;
     padding-top: 150px;
-    color: whitesmoke;
+    color: #F7F7F7;
 }
 
