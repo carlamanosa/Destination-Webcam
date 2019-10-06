@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Our CSS Page -->
+    <link rel="stylesheet" href="index.css">
+    <title>Destination webcam</title>
+</head>
+
+<body>
+    <!-- Nav Bar Header with our Website's Name -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="center">Destination (Travel) Webcam</a>
+        </div>
+    </nav>
+
+    <!-- Grid system (main) container that creates our layout -->
+    <div class="container">
+
+        <!-- Row 1: search stuff and on >m screens, map -->
+        <div class="row">
+
+            <!--Map Display -->
+            <div class="col s12 m6">
+                <div id="map"></div>
+            </div>
+
+            <!-- Main search box col -->
+            <div class="col s12 m6">  
+
+                <!-- Rand Btns Row -->
+                <div class="row">
+                    <!-- Random Button -->
+                    <div id="randBtnDiv">
+                        <a class="waves-effect waves-light btn-large button"><div class="btnText">Random</div></a>
+                    </div>
+                </div>
+
+                <!-- Google Location Search -->
+                <div class="row">
+                    <div class="col s12 searchBox">
+                        <!-- Google Map Search Bar -->
+                        <input class="form-control" id="search" type="text" placeholder="Search..." />
+                    </div>
+                    <!-- Advanced Search Dropdown Trigger -->
+                    <a class='dropdown-trigger btn-flat left' href='#' data-target='dropdown1'>Advanced Search</a>
+
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li><a href="#!">one</a></li>
+                        <li><a href="#!">two</a></li>
+                        <li><a href="#!">three</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Main Search Box Div-->
+            
+        </div>
+        <!-- End Row 1 -->
+
+        <!-- Row 2: Feed Frames -->
+        <div class="row" id="main">
+            
+        </div>
+        <!-- End Row 2 -->
+        <button id="begin">Find</button>
+
+    </div>
+    <!-- End Main Container Div-->
+
+    <!-- (BONUS) On Water Div-->
+    <div class="row">
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <!-- End Water Div -->
+        
+    <!-- Footer Div -->
+    <div>
+
+
+
+
+
+    </div>
+    
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Script for jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- Google Maps scripts. -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg&callback=initMap&libraries=places" async defer></script>
+    <!-- Our JS Link -->
+    <script src="index.js"></script>
+    <script type="text/javascript"></script>
+
+</body>
+
+</html>
