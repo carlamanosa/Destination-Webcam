@@ -131,6 +131,12 @@ var infoWindow;
 //----------------------------------------------------------------------------------------------------------------//
   
 // Parallax Initialize
+$("#begin").on("click", function() {
+  console.log("openDisplay() called");
+  $("#start-section").attr("style", "display: none;");
+  $("#main-container").show("scroll", "#main-display");  
+});
+
 $('.parallax').parallax();
 
 // Scrollspy Initialize

@@ -5,11 +5,8 @@ Deep Cyan: #009BA5;
 Paper: #F7F7F7;
 Jet: #303030; */
 
-body {
-    background-image: url(Images/starting-section\ background\ image.jpg);
-    background-size: cover;
-    background-color: #F7F7F7;
-    color: whitesmoke;
+body {    
+    color: #F7F7F7;
     text-align: center;
 }
 
@@ -19,11 +16,17 @@ body {
     font-size: 2rem;
 }
 
+#main-container {
+    background: #009BA5;
+    display: none;
+    min-height: 90vh;
+}
+
 .searchBox {
     background-color: #F7F7F7;
     margin-top: 15px;
     height: 10vh;
-    border: solid 1px #009BA5;
+    border: solid 2px #303030;
 }
 
 .button {
@@ -47,7 +50,8 @@ body {
     border: solid 1px #303030;
     color: #009BA5;
     margin: 1%;
-    min-block-size: 35vh;
+    display: inline-flexbox;
+    min-height: 35vh;
 }
 
 .main-location {
@@ -56,7 +60,7 @@ body {
 
 .main-video {
     padding: 1%;
-    margin: 2rem auto;
+    position: relative;
 }
 
 #randBtnDiv {
@@ -68,9 +72,15 @@ body {
     margin-top: 8%;
 }
 
-#starting-section {
-    height: 600px;
-    padding-top: 150px;
+#start-section {
+    background-image: url(Images/starting-section\ background\ image.jpg);
+    background-size: cover;
+    height: 90vh;
     color: #F7F7F7;
+    padding-top: 8%;
+}
+
+#start {
+    margin-top: 3%;
 }
 
