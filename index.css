@@ -62,8 +62,11 @@ body {
     margin-top: 8%;
 }
 
+
+
 #parallax-content{
-    padding-top: 84px;
-    background: rgba(0,0,0,0.5);
-    color: white;
+    padding: 84px;
+    color:black;
+    backdrop-filter: blur(10px);
+
 }

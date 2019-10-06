@@ -24,15 +24,17 @@
     <div class="parallax-container" id="parallax-container1">
 
         <div class="parallax" id="parallax-content">
-                <span class="subtitle  white-text"><h2 data-aos="fade-down">Destination Webcam</h2></span><br>
+                <span><h2>Destination Webcam</h2></span><br>
                 <p>Travel around the world using a quick search and click. Making it easier for you to explore without the hassle.</p>
-                <a href="#about" class="waves-effect waves-light btn-large blue" id="startBtn" data-aos="fade-right">Start Search!</a>
-                <!-- <a class="waves-effect waves-light btn-large green accent-4" data-aos="fade-left">Download</a> -->
-        </div>
-      </div>
+                <br>
+                <a href="#main-container" class="waves-effect waves-light btn-large">Start Search!</a>
+        
+     </div>
+    </div>
+    <p></p>
 
     <!-- Grid system (main) container that creates our layout -->
-    <div class="section white" id="main-container">
+    <div class="section white scrollspy" id="main-container">
 
         <!-- Row 1: search stuff and on >m screens, map -->
         <div class="row">
@@ -84,7 +86,7 @@
 
     </div>
     <!-- End Main Container Div-->
-
+<p></p>
     <!-- Starting bottom container -->
     <div class="parallax-container" id="parallax-container2">
         <div class="parallax"><img src="Images/clear-ocean-background.jpg"></div>
@@ -124,6 +126,19 @@
     <!-- Our JS Link -->
     <script src="index.js"></script>
     <script type="text/javascript"></script>
+
+    <!-- Parallax Initialize -->
+    <script>
+$(document).ready(function(){
+  $('.parallax').parallax();
+});
+    </script> -->
+<!-- Scrollspy Initialize-->
+    <script>
+    $(document).ready(function(){
+  $('.scrollspy').scrollSpy();
+});
+    </script>
 
 </body>
 
