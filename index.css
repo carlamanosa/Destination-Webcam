@@ -6,10 +6,10 @@ Paper: #F7F7F7;
 Jet: #303030; */
 
 body {
-    background-image: url(Images/clear-ocean-background.jpg);
+    background-image: url(Images/starting-section\ background\ image.jpg);
     background-size: cover;
     background-color: #F7F7F7;
-    color: #303030;
+    color: whitesmoke;
     text-align: center;
 }
 
@@ -17,10 +17,6 @@ body {
     background-color: #FFA600;
     color: #F7F7F7;
     font-size: 2rem;
-}
-
-.container {
-    width: 95%;
 }
 
 .searchBox {
@@ -47,10 +43,20 @@ body {
   }
 
 .feed {
-    background-color: #F7F7F7;
+    background-color: #FFA600;
     border: solid 1px #303030;
-    height: 50vh;
-    margin: 2%;
+    color: #009BA5;
+    margin: 1%;
+    min-block-size: 35vh;
+}
+
+.main-location {
+    margin: 1rem;
+}
+
+.main-video {
+    padding: 1%;
+    margin: 2rem auto;
 }
 
 #randBtnDiv {
@@ -61,3 +67,10 @@ body {
 .btnText {
     margin-top: 8%;
 }
+
+#starting-section {
+    height: 600px;
+    padding-top: 150px;
+    color: #F7F7F7;
+}
+
