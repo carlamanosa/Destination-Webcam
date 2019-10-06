@@ -108,6 +108,8 @@ var infoWindow;
       })
   }
 
+  createMap();
+
   function createMap () {
     var options = {
       center: { lat: 43.654, lng: -79.383 },
