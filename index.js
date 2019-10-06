@@ -74,47 +74,47 @@ $("#begin").on("click", displayWebcam);
 
 var latitudeLoc;
 var longitudeLoc;
-
 var queryURL = "https://maps.googleapis.com/api/geocode/json?";
 // var queryParams = $.params({
-//   geometry: 
+//   geometry:
 // })
-
 $.ajax({
-  url: queryURL,
-  method: "GET"
-}).then(function (response) {  
-  console.log(response);
-  console.log(response.results[0].geometry.lat);
-  console.log(response.results[0].geometry.lng);
+ url: queryURL,
+ method: "GET"
+}).then(function (response) {
+ console.log(response);
+ console.log(response.results[0].geometry.lat);
+ console.log(response.results[0].geometry.lng);
 });
-
 var map;
-  geocode();
-
-  function geocode() {
-      var location = "2008 Thackery st, West Covina, CA";
-
-      var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?";
-
-      var queryParams = $.param({
-          address: location,
-          key: 'AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg'
-      })
-  
-      $.ajax({
-          url: queryURL + queryParams,
-          method: "GET"
-      }).then(function (response) {
-          console.log(response);
-          latitudeLoc = response.results[0].geometry.location.lat;
-          longitudeLoc = response.results[0].geometry.location.lng;
-          console.log(latitudeLoc);
-          console.log(longitudeLoc);
-
-      })
-  }
-
+var infoWindow;
+ geocode();
+ function geocode() {
+     var location = "2008 Thackery st, West Covina, CA";
+     var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?";
+     var queryParams = $.param({
+         address: location,
+         key: 'AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg'
+     })
+     $.ajax({
+         url: queryURL + queryParams,
+         method: "GET"
+     }).then(function (response) {
+         console.log(response);
+         latitudeLoc = response.results[0].geometry.location.lat;
+         longitudeLoc = response.results[0].geometry.location.lng;
+         console.log(latitudeLoc);
+         console.log(longitudeLoc);
+     })
+ }
+ createMap();
+ function createMap () {
+   var options = {
+     center: { lat: 43.654, lng: -79.383 },
+     zoom: 10
+   };
+   map = new google.maps.Map(document.getElementById('map'), options);
+   infoWindow = new google.maps.InfoWindow;
 
 
 
