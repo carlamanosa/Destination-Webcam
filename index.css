@@ -7,8 +7,8 @@ Jet: #303030; */
 
 body {
     background-image: url(Images/starting-section\ background\ image.jpg);
-    /* background-size: cover;
-    background-color: #F7F7F7; */
+    background-size: cover;
+    background-color: #F7F7F7;
     color: whitesmoke;
     text-align: center;
 }
@@ -19,6 +19,7 @@ body {
     font-size: 2rem;
 }
 
+<<<<<<< HEAD
 #starting-section {
     height: 900px;
     padding-top: 150px;
@@ -32,6 +33,8 @@ body {
     width: 100%;
 }
 
+=======
+>>>>>>> origin/temp
 .searchBox {
     background-color: #F7F7F7;
     margin-top: 15px;
@@ -56,10 +59,20 @@ body {
   }
 
 .feed {
-    background-color: #F7F7F7;
+    background-color: #FFA600;
     border: solid 1px #303030;
-    height: 50vh;
-    margin: 2%;
+    color: #009BA5;
+    margin: 1%;
+    min-block-size: 35vh;
+}
+
+.main-location {
+    margin: 1rem;
+}
+
+.main-video {
+    padding: 1%;
+    margin: 2rem auto;
 }
 
 #randBtnDiv {
@@ -71,3 +84,12 @@ body {
     margin-top: 8%;
 }
 
+<<<<<<< HEAD
+=======
+#starting-section {
+    height: 600px;
+    padding-top: 150px;
+    color: #F7F7F7;
+}
+
+>>>>>>> origin/temp

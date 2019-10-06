@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Our CSS Page -->
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
     <title>Destination webcam</title>
 </head>
 
@@ -59,15 +60,6 @@
                         <!-- Google Map Search Bar -->
                         <input class="form-control" id="search" type="text" placeholder="Search..." />
                     </div>
-                    <!-- Advanced Search Dropdown Trigger -->
-                    <a class='dropdown-trigger btn-flat left' href='#' data-target='dropdown1'>Advanced Search</a>
-
-                    <!-- Dropdown Structure -->
-                    <ul id='dropdown1' class='dropdown-content'>
-                        <li><a href="#!">one</a></li>
-                        <li><a href="#!">two</a></li>
-                        <li><a href="#!">three</a></li>
-                    </ul>
                 </div>
             </div>
             <!-- End Main Search Box Div-->
@@ -76,8 +68,10 @@
         <!-- End Row 1 -->
 
         <!-- Row 2: Feed Frames -->
-        <div class="row" id="main">
-            
+        <div class="row main-feeds">
+            <div class="col s12 m4" id="main0"></div>
+            <div class="col s12 m4" id="main1"></div>
+            <div class="col s12 m4" id="main2"></div>
         </div>
         <!-- End Row 2 -->
         <button id="begin">Find</button>
@@ -123,24 +117,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg&callback=initMap&libraries=places" async defer></script>
     <!-- Our JS Link -->
     <script src="index.js"></script>
-    <script type="text/javascript"></script>
-
-
-
-    <!-- Parallax Initialize -->
-    <script>
-$(document).ready(function(){
-  $('.parallax').parallax();
-});
-    </script>
-
-<!-- Scrollspy Initialize-->
-    <script>
-    $(document).ready(function(){
-  $('.scrollspy').scrollSpy();
-});
-    </script>
-
+    
 </body>
 
 </html>
