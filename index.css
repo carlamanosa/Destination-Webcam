@@ -5,6 +5,10 @@ Deep Cyan: #009BA5;
 Paper: #F7F7F7;
 Jet: #303030; */
 
+* {
+    box-sizing: border-box;
+}
+
 body {    
     color: #F7F7F7;
     text-align: center;
@@ -23,11 +27,16 @@ body {
     min-height: 90vh;
 }
 
+.search-container {
+    margin-right: 1rem;
+}
+
 .searchBox {
     background-color: #F7F7F7;
     margin-top: 15px;
     height: 10vh;
     border: solid 2px #303030;
+    width: 98%;
 }
 
 .button {
@@ -42,7 +51,8 @@ body {
 
 #map {
     height: 50vh;
-    margin-top: 15px;
+    margin: 3rem;
+    margin-left: 1rem;
     border: solid 2px #303030;
   }
 
@@ -52,7 +62,6 @@ body {
     color: #009BA5;
     margin: 1%;
     display: inline-flexbox;
-    min-height: 35vh;
 }
 
 .main-location {
@@ -62,15 +71,18 @@ body {
 .main-video {
     padding: 1%;
     position: relative;
+    width: 90%;
+    height: 80%;
 }
 
 #randBtnDiv {
     margin-top: 10%;
     text-align: center;
+    margin-right: 3rem;
 }
 
 .btnText {
-    margin-top: 8%;
+    margin: auto auto;
 }
 
 #start-section {
@@ -81,7 +93,39 @@ body {
     padding-top: 8%;
 }
 
-#start {
-    margin-top: 3%;
+#begin {
+    margin-top: 4%;
 }
+
+@media (max-width: 950px) {
+    #main0 {
+        width: 45%;
+    } 
+    #main1 {
+        width: 45%;
+    }   
+    #main2 {
+        width: 45%;
+    }
+}
+
+@media (max-width: 650px) {
+    #main0 {
+        width: 100%;
+    } 
+    #main1 {
+        width: 100%;
+    }   
+    #main2 {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 325px) {
+    .main-video{
+        width: 100%;
+    }
+}
+
 

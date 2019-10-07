@@ -16,7 +16,7 @@
     <!-- Nav Bar Header with our Website's Name -->
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="center">Destination (Travel) Webcam</a>
+            <a href="#" class="center">Destination Webcam</a>
         </div>
     </nav>
 
@@ -26,7 +26,7 @@
             <br>
             <h4>Curiousity will only take you so far... </h4>
             <br>
-            <a href="#bottom-main-container" class="waves-effect waves-light btn-large" id="begin">Start Search</a>
+            <a href="#main-container" class="waves-effect waves-light btn-large" id="begin">Start Search</a>
      </div>
 
     <!-- Grid system (main) container that creates our layout -->
@@ -41,31 +41,33 @@
             </div>
 
             <!-- Main search box col -->
-            <div class="col s12 m6">  
+            <div class="col s12 m6">
+                <div id="search-container">
 
-                <!-- Rand Btns Row -->
-                <div class="row">
-                    <!-- Random Button -->
-                    <div id="randBtnDiv">
-                        <a class="waves-effect waves-light btn-large button"><div class="btnText">Random</div></a>
+                    <!-- Rand Btns Row -->
+                    <div class="row">
+                        <!-- Random Button -->
+                        <div id="randBtnDiv">
+                            <a class="waves-effect waves-light btn-large button"><div class="btnText">Random</div></a>
+                        </div>
+                    </div>
+
+                    <!-- Google Location Search -->
+                    <div class="row searchBox">
+                        <div class="col s12">
+                            <!-- Google Map Search Bar -->
+                            <input class="form-control" id="search" type="text" placeholder="Search..." />
+                        </div>
                     </div>
                 </div>
-
-                <!-- Google Location Search -->
-                <div class="row">
-                    <div class="col s12 searchBox">
-                        <!-- Google Map Search Bar -->
-                        <input class="form-control" id="search" type="text" placeholder="Search..." />
-                    </div>
-                </div>
-            </div>
+            </div>  
             <!-- End Main Search Box Div-->
             
         </div>
         <!-- End Row 1 -->
 
         <!-- Row 2: Feed Frames -->
-        <div class="row main-feeds" id="bottom-main-container">
+        <div class="row main-feeds">
             <div class="col s12 m4" id="main0"></div>
             <div class="col s12 m4" id="main1"></div>
             <div class="col s12 m4" id="main2"></div>
