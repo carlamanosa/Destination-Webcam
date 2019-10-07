@@ -50,7 +50,6 @@ function displayWebcam() {
               // Appending elements
               $newDiv.append($newVideo);
               $newDiv.append($newLocation);
-              $newDiv.append($newVideo);
               $newDiv.attr("class", "feed");
               $($whichMain).append($newDiv);
           };
@@ -111,7 +110,6 @@ function randomWebcam() {
               // Appending elements
               $newDiv.append($newVideo);
               $newDiv.append($newLocation);
-              $newDiv.append($newVideo);
               $newDiv.attr("class", "feed");
               $($whichMain).append($newDiv);
           };
