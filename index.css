@@ -61,18 +61,19 @@ body {
     border: solid 1px #303030;
     color: #009BA5;
     margin: 1%;
-    display: inline-flexbox;
+    min-height: 50vh;
 }
 
 .main-location {
     margin: 1rem;
+    min-height: 20%;
 }
 
 .main-video {
     padding: 1%;
     position: relative;
     width: 90%;
-    height: 80%;
+    min-height: 80%;
 }
 
 #randBtnDiv {
@@ -82,7 +83,7 @@ body {
 }
 
 .btnText {
-    margin-top: 26%;
+    margin-top: auto;
 }
 
 #start-section {
