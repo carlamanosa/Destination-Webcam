@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Judson:400,700" rel="stylesheet">
     <!-- Our CSS Page -->
     <link rel="stylesheet" href="index.css">
     <title>Destination webcam</title>
@@ -14,103 +15,64 @@
 
 <body>
     <!-- Nav Bar Header with our Website's Name -->
-    <nav>
+    <nav class="transparent z-depth-0">
         <div class="nav-wrapper">
             <a href="#" class="center">Destination Webcam</a>
         </div>
     </nav>
-
+  
     <!-- First container/ landing -->
-    <div class="section" id="start-section" >
-            <h1>See your destinations in real time</h1>
-            <br>
-            <h4>Curiousity will only take you so far... </h4>
-            <br>
-            <a href="#main-container" class="waves-effect waves-light btn-large" id="begin">Start Search</a>
-     </div>
-
-    <!-- Grid system (main) container that creates our layout -->
-    <div id="main-container">
-
-        <!-- Row 1: search stuff and on >m screens, map -->
-        <div class="row">
-
-            <!--Map Display -->
-            <div class="col s12 m6">
-                <div id="map"></div>
-            </div>
-
-            <!-- Main search box col -->
-            <div class="col s12 m6">
-                <div id="search-container">
-
-                    <!-- Rand Btns Row -->
-                    <div class="row">
-                        <!-- Random Button -->
-                        <div id="randBtnDiv">
-                            <a class="waves-effect waves-light btn-large button"><div class="btnText">Random</div></a>
-                        </div>
-                    </div>
-
-                    <!-- Google Location Search -->
-                    <div class="row searchBox">
-                        <div class="col s12">
-                            <!-- Google Map Search Bar -->
-                            <input class="form-control" id="search" type="text" placeholder="Search..." />
-                        </div>
-                    </div>
-                </div>
-            </div>  
-            <!-- End Main Search Box Div-->
-            
-        </div>
-        <!-- End Row 1 -->
-
-        <!-- Row 2: Feed Frames -->
-        <div class="row main-feeds">
-            <div class="col s12 m4" id="main0"></div>
-            <div class="col s12 m4" id="main1"></div>
-            <div class="col s12 m4" id="main2"></div>
-        </div>
-        <!-- End Row 2 -->
-
+    <div class="section" id="start-section">
+        <h1>See your destinations in real time</h1>
+        <h4>Curiousity will only take you so far... </h4>
+        <br>
+        <br>
+        <a href="#main-container" class="waves-effect waves-light btn-large" id="begin">Start Search</a>
     </div>
-    <!-- End Main Container Div-->
+    <!-- Section: (not a jumbotron) map -->
+    <div class="map-wrap container">
+        <div class="row">
+            <div class="col s6 m8 offset-s1" id="mapSearch">
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons">Choose a Location</i></label>
+                        <i class="material-icons" style="font-size: 1rem">close</i>
+                    </div>
+                </form>
+            </div>
+            <div class="vl col s2">
+                <a class="waves-effect waves-teal btn-flat" id="randomBtnDiv">or Random</a>
+            </div>
+        </div>
+    </div>
+  
+    <!--Map Display -->
+    <div class="jumbo-map">
+        <div id="map"></div>
+  </div>
 
     <!-- (BONUS) On Water Div-->
     <div class="row">
-
-
-
-
-
-
-
-
-
-
     </div>
     <!-- End Water Div -->
-        
+
     <!-- Footer Div -->
     <div>
-
-
-
-
-
     </div>
-    
+
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Script for jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <!-- Google Maps scripts. -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg&callback=initMap&libraries=places" async defer></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg&callback=initMap&libraries=places"
+        async defer></script>
     <!-- Our JS Link -->
     <script src="index.js"></script>
-    
+
 </body>
 
 </html>
