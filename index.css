@@ -10,22 +10,19 @@ Jet: #303030; */
 }
 
 body {
-    font-family: ‘Montserrat’, serif;
+    font-family: 'Judson', sans-serif;
     color: #F7F7F7;
-    background-image: url(Temp/images/treeline-landscape.jpg);
+    background-image: url(Temp/images/background2.png);
     background-size: contain;
    }
 
    
    h1, h2, h3, h4, h5, h6 {
-    font-family: ‘Lora’, sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
+    font-family: 'Judson', sans-serif;
    }
 
-
 .nav-wrapper {
-    background-color: #36454f;
+    background-color: rgba(0, 0, 0, 0);
     text-align: left;
     padding-left: 10%;
     color: #F7F7F7;
