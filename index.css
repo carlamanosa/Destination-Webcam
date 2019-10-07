@@ -60,7 +60,7 @@ h4 {
 }
 
 #begin {
-    position: static;
+    float: right;
 }
 
 /* map */
