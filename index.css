@@ -13,7 +13,7 @@ body {
     font-family: 'Judson', sans-serif;
     color: #F7F7F7;
     background-image: url(Temp/images/background2.png);
-    background-size: contain;
+    background-size: cover;
    }
 
    
