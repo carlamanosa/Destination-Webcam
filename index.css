@@ -35,7 +35,7 @@ body {
 #start-section {
     padding-right: 10%;
     padding-top: 59px;
-    height: 100vh;
+    height: 90vh;
 }
 
 #begin {
@@ -75,7 +75,7 @@ h4 {
  }
  
 #mapSearch {
- margin-right: 10px;
+    background-color: white;
  }
 
  .jumbo-map {
@@ -91,6 +91,26 @@ h4 {
     border-left: 1px solid black;
     height: 80%;
   }
+
+  #mapSearch {
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+    float: left;
+  }
+
+  #randomBtnDiv{
+      /* float: right; */
+  }
+
+  #submit {
+      /* float: right; */
+  }
+
 @media (max-width: 950px) {
     #main0 {
         width: 45%;
