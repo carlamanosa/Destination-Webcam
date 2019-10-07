@@ -15,15 +15,13 @@ body {
 }
 
 .nav-wrapper {
-    background-color: #FFA600;
-    color: #F7F7F7;
+    background-color: white;
+    color: black;
     font-size: 2rem;
 }
 
 #main-container {
-    background-image: url(Images/underwater-light-cropped.jpg);
-    background-size: cover;
-    display: none;
+
     min-height: 90vh;
 }
 
@@ -57,9 +55,9 @@ body {
   }
 
 .feed {
-    background-color: #FFA600;
+    background-color: white;
     border: solid 1px #303030;
-    color: #009BA5;
+    color: black;
     margin: 1%;
     min-height: 50vh;
 }
