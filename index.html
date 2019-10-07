@@ -16,12 +16,21 @@
     <!-- Nav Bar Header with our Website's Name -->
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="center">Destination (Travel) Webcam</a>
+            <a href="#" class="center">Destination Webcam</a>
         </div>
     </nav>
 
+    <!-- First container/ landing -->
+    <div class="section" id="start-section" >
+            <h1>See your destinations in real time</h1>
+            <br>
+            <h4>Curiousity will only take you so far... </h4>
+            <br>
+            <a href="#main-container" class="waves-effect waves-light btn-large" id="begin">Start Search</a>
+     </div>
+
     <!-- Grid system (main) container that creates our layout -->
-    <div class="container">
+    <div id="main-container">
 
         <!-- Row 1: search stuff and on >m screens, map -->
         <div class="row">
@@ -32,44 +41,38 @@
             </div>
 
             <!-- Main search box col -->
-            <div class="col s12 m6">  
+            <div class="col s12 m6">
+                <div id="search-container">
 
-                <!-- Rand Btns Row -->
-                <div class="row">
-                    <!-- Random Button -->
-                    <div id="randBtnDiv">
-                        <a class="waves-effect waves-light btn-large button"><div class="btnText">Random</div></a>
+                    <!-- Rand Btns Row -->
+                    <div class="row">
+                        <!-- Random Button -->
+                        <div id="randBtnDiv">
+                            <a class="waves-effect waves-light btn-large button"><div class="btnText">Random</div></a>
+                        </div>
+                    </div>
+
+                    <!-- Google Location Search -->
+                    <div class="row searchBox">
+                        <div class="col s12">
+                            <!-- Google Map Search Bar -->
+                            <input class="form-control" id="search" type="text" placeholder="Search..." />
+                        </div>
                     </div>
                 </div>
-
-                <!-- Google Location Search -->
-                <div class="row">
-                    <div class="col s12 searchBox">
-                        <!-- Google Map Search Bar -->
-                        <input class="form-control" id="search" type="text" placeholder="Search..." />
-                    </div>
-                    <!-- Advanced Search Dropdown Trigger -->
-                    <a class='dropdown-trigger btn-flat left' href='#' data-target='dropdown1'>Advanced Search</a>
-
-                    <!-- Dropdown Structure -->
-                    <ul id='dropdown1' class='dropdown-content'>
-                        <li><a href="#!">one</a></li>
-                        <li><a href="#!">two</a></li>
-                        <li><a href="#!">three</a></li>
-                    </ul>
-                </div>
-            </div>
+            </div>  
             <!-- End Main Search Box Div-->
             
         </div>
         <!-- End Row 1 -->
 
         <!-- Row 2: Feed Frames -->
-        <div class="row" id="main">
-            
+        <div class="row main-feeds">
+            <div class="col s12 m4" id="main0"></div>
+            <div class="col s12 m4" id="main1"></div>
+            <div class="col s12 m4" id="main2"></div>
         </div>
         <!-- End Row 2 -->
-        <button id="begin">Find</button>
 
     </div>
     <!-- End Main Container Div-->
@@ -107,8 +110,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg&callback=initMap&libraries=places" async defer></script>
     <!-- Our JS Link -->
     <script src="index.js"></script>
-    <script type="text/javascript"></script>
-
+    
 </body>
 
 </html>
