@@ -5,11 +5,12 @@ Deep Cyan: #009BA5;
 Paper: #F7F7F7;
 Jet: #303030; */
 
-body {
-    background-image: url(Images/starting-section\ background\ image.jpg);
-    background-size: cover;
-    background-color: #F7F7F7;
-    color: whitesmoke;
+* {
+    box-sizing: border-box;
+}
+
+body {    
+    color: #F7F7F7;
     text-align: center;
 }
 
@@ -19,11 +20,23 @@ body {
     font-size: 2rem;
 }
 
+#main-container {
+    background-image: url(Images/underwater-light-cropped.jpg);
+    background-size: cover;
+    display: none;
+    min-height: 90vh;
+}
+
+.search-container {
+    margin-right: 1rem;
+}
+
 .searchBox {
     background-color: #F7F7F7;
     margin-top: 15px;
     height: 10vh;
-    border: solid 1px #009BA5;
+    border: solid 2px #303030;
+    width: 98%;
 }
 
 .button {
@@ -38,7 +51,8 @@ body {
 
 #map {
     height: 50vh;
-    margin-top: 15px;
+    margin: 3rem;
+    margin-left: 1rem;
     border: solid 2px #303030;
   }
 
@@ -47,7 +61,7 @@ body {
     border: solid 1px #303030;
     color: #009BA5;
     margin: 1%;
-    min-block-size: 35vh;
+    display: inline-flexbox;
 }
 
 .main-location {
@@ -56,21 +70,62 @@ body {
 
 .main-video {
     padding: 1%;
-    margin: 2rem auto;
+    position: relative;
+    width: 90%;
+    height: 80%;
 }
 
 #randBtnDiv {
     margin-top: 10%;
     text-align: center;
+    margin-right: 3rem;
 }
 
 .btnText {
-    margin-top: 8%;
+    margin: auto auto;
 }
 
-#starting-section {
-    height: 600px;
-    padding-top: 150px;
+#start-section {
+    background-image: url(Images/starting-section\ background\ image.jpg);
+    background-size: cover;
+    height: 90vh;
     color: #F7F7F7;
+    padding-top: 8%;
 }
+
+#begin {
+    margin-top: 4%;
+}
+
+@media (max-width: 950px) {
+    #main0 {
+        width: 45%;
+    } 
+    #main1 {
+        width: 45%;
+    }   
+    #main2 {
+        width: 45%;
+    }
+}
+
+@media (max-width: 650px) {
+    #main0 {
+        width: 100%;
+    } 
+    #main1 {
+        width: 100%;
+    }   
+    #main2 {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 325px) {
+    .main-video{
+        width: 100%;
+    }
+}
+
 
