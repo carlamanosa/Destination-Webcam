@@ -12,7 +12,10 @@ Jet: #303030; */
 body {
     font-family: ‘Montserrat’, serif;
     color: #F7F7F7;
+    background-image: url(Temp/images/treeline-landscape.jpg);
+    background-size: contain;
    }
+
    
    h1, h2, h3, h4, h5, h6 {
     font-family: ‘Lora’, sans-serif;
@@ -29,14 +32,37 @@ body {
     font-size: 25px;
 }
 
-#main-container {
-    background-image: url(Images/man-looking-background.jpg);
+/* start section */
+
+#start-section {
+    padding-right: 38px;
+    padding-top: 59px;
+}
+}
+
+#main-container{
     background-size: cover;
     display: none;
     min-height: 90vh;
     text-align: center;
 }
 
+/* starting page */
+h1 {
+    text-align: right;
+    font-size: 35px;
+}
+
+h4 {
+    text-align: right;
+    font-size: 25px;
+}
+
+#begin {
+    position: static;
+}
+
+/* map */
  .mapWrap {
     max-height: 10vh;
     width: 100%;
