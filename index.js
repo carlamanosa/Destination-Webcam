@@ -147,34 +147,53 @@ $.ajax({
 });
 var map;
 var infoWindow;
- geocode();
- function geocode() {
-     var location = "2008 Thackery st, West Covina, CA";
-     var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?";
-     var queryParams = $.param({
-         address: location,
-         key: 'AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg'
-     })
-     $.ajax({
-         url: queryURL + queryParams,
-         method: "GET"
-     }).then(function (response) {
-         console.log(response);
-         latitudeLoc = response.results[0].geometry.location.lat;
-         longitudeLoc = response.results[0].geometry.location.lng;
-         console.log(latitudeLoc);
-         console.log(longitudeLoc);
-     })
- }
- createMap();
- function createMap () {
-   var options = {
-     center: { lat: 43.654, lng: -79.383 },
-     zoom: 10
-   };
-   map = new google.maps.Map(document.getElementById('map'), options);
-   infoWindow = new google.maps.InfoWindow;
+geocode();
+function geocode() {
+    var location = "2008 Thackery st, West Covina, CA";
+    var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?";
+    var queryParams = $.param({
+        address: location,
+        key: 'AIzaSyAMGnVG45Aa7TXiqBhficDiazh-Sjprmeg'
+    })
+    $.ajax({
+        url: queryURL + queryParams,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+        latitudeLoc = response.results[0].geometry.location.lat;
+        longitudeLoc = response.results[0].geometry.location.lng;
+        console.log(latitudeLoc);
+        console.log(longitudeLoc);
+    })
+}
+createMap();
+function createMap () {
+  var options = {
+    center: { lat: 43.654, lng: -79.383 },
+    zoom: 10
+  };
+  map = new google.maps.Map(document.getElementById('map'), options);
+  infoWindow = new google.maps.InfoWindow;
+  
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (p) {
+      var position = {
+        lat: p.coords.latitude,
+        lng: p.coords.longitude
+      };
+
+      infoWindow.setPosition(position);
+      infoWindow.setContent('Your location!');
+      infoWindow.open(map);
+      map.setCenter(position);
+    }, function () {
+      handleLocationError('Geolocation service failed', map.getCenter());
+    });
+  } else {
+    handleLocationError('No geolocation available.', map.getCenter());
   }
+}
+
 
 
 
