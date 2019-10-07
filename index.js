@@ -174,7 +174,30 @@ function createMap () {
   };
   map = new google.maps.Map(document.getElementById('map'), options);
   infoWindow = new google.maps.InfoWindow;
+<<<<<<< HEAD
 }
+=======
+  
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (p) {
+      var position = {
+        lat: p.coords.latitude,
+        lng: p.coords.longitude
+      };
+
+      infoWindow.setPosition(position);
+      infoWindow.setContent('Your location!');
+      infoWindow.open(map);
+      map.setCenter(position);
+    }, function () {
+      handleLocationError('Geolocation service failed', map.getCenter());
+    });
+  } else {
+    handleLocationError('No geolocation available.', map.getCenter());
+  }
+}
+
+>>>>>>> origin/temp
 
 
 
