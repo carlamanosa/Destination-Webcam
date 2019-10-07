@@ -7,34 +7,53 @@ Jet: #303030; */
 
 body {
     background-image: url(Images/starting-section\ background\ image.jpg);
-    background-size: cover;
-    background-color: #F7F7F7;
+    /* background-size: cover;
+    background-color: #F7F7F7; */
     color: whitesmoke;
     text-align: center;
+    font-family: 'Lora', serif;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+   }
 
 .nav-wrapper {
-    background-color: #FFA600;
+    background-color: white;
     color: #F7F7F7;
     font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    
+   }
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+   }
 }
 
-<<<<<<< HEAD
 #starting-section {
-    height: 900px;
+    height: px;
     padding-top: 150px;
     color: whitesmoke;
-    backdrop-filter: blur(10px);
+    
 }
 
 
 #main-container {
     background-color: white;
     width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+   }
 }
 
-=======
->>>>>>> origin/temp
 .searchBox {
     background-color: #F7F7F7;
     margin-top: 15px;
@@ -50,6 +69,10 @@ body {
     border-radius: 50%;
     height: 15vh;
     margin-bottom: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+   }
 }
 
 #map {
@@ -59,20 +82,10 @@ body {
   }
 
 .feed {
-    background-color: #FFA600;
+    background-color: #F7F7F7;
     border: solid 1px #303030;
-    color: #009BA5;
-    margin: 1%;
-    min-block-size: 35vh;
-}
-
-.main-location {
-    margin: 1rem;
-}
-
-.main-video {
-    padding: 1%;
-    margin: 2rem auto;
+    height: 50vh;
+    margin: 2%;
 }
 
 #randBtnDiv {
@@ -84,12 +97,3 @@ body {
     margin-top: 8%;
 }
 
-<<<<<<< HEAD
-=======
-#starting-section {
-    height: 600px;
-    padding-top: 150px;
-    color: #F7F7F7;
-}
-
->>>>>>> origin/temp
