@@ -2,10 +2,8 @@
 $(document).ready(function () {
 
   //----------------------------------------------------------------------------------------------------------------//
-  //                                           Webcam Display Stuff
+  //                                           Webcam Display Markers Stuff
   //----------------------------------------------------------------------------------------------------------------//
-
-  // Calling function
 
 
   //----------------------------------------------------------------------------------------------------------------//
@@ -29,8 +27,6 @@ $(document).ready(function () {
     }).then(function (response) {
       // Console logging response
       console.log(response);
-      // Clearing camMarkers arr
-      camMarkers.length = 0;
       // Looping through each prev display to clear it
       for (var i = 0; i < 3; i++) {
         var $whichMain = "#main" + i;
@@ -92,7 +88,7 @@ $(document).ready(function () {
       var position = response.results[0].geometry.location;
       latitudeLoc = response.results[0].geometry.location.lat;
       longitudeLoc = response.results[0].geometry.location.lng;
-      console.log("this", latitudeLoc);
+      console.log(latitudeLoc);
       console.log(longitudeLoc);
 
       infoWindow.setPosition(position);
@@ -100,13 +96,14 @@ $(document).ready(function () {
       infoWindow.open(map);
       map.setCenter(position);
       displayWebcam();
+      deleteMarkers();
+      displayMarkers(camMarkers);
     })
   }
 
   $("#submit").on("click", function () {
     geocode($("#address").val());
   })
-
 
   //----------------------------------------------------------------------------------------------------------------//
   //                                           Other Stuff
@@ -139,8 +136,6 @@ function displayWebcam() {
   }).then(function (response) {
     // Console logging response
     console.log(response);
-    // Clearing camMarkers arr
-    camMarkers.length = 0;
     // Looping through each prev display to clear it
     for (var i = 0; i < 3; i++) {
       var $whichMain = "#main" + i;
@@ -208,4 +203,36 @@ function createMap() {
   } else {
     handleLocationError('No geolocation available.', map.getCenter());
   }
+}
+
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+  for (var i = 0; i < camMarkers.length; i++) {
+      camMarkers[i].setMap(map);
+  }
+}
+
+// Removes the markers from the map, but keeps them in the array.
+function clearMarkers() {
+  setMapOnAll(null);
+}
+
+// Deletes all markers in the array by removing references to them.
+function deleteMarkers() {
+  clearMarkers();
+  camMarkers = [];
+}
+
+//geolocation()?
+
+function displayMarkers(arr) {
+  console.log(arr);
+  for (var i = 0; i < places.length; i++) {
+      showMarkers();
+  }
+}
+
+// Shows any markers currently in the array.
+function showMarkers() {
+  setMapOnAll(map);
 }
