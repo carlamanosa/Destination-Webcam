@@ -98,6 +98,7 @@ h4 {
 
  .main-feeds {
     margin-top: 4rem;
+    margin-left: 6%;
  }
 
  .vl {
@@ -132,7 +133,6 @@ h4 {
     background-color:#1b5e20;
     color: white;
 }
-
 
 @media (max-width: 950px) {
     #main0 {
