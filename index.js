@@ -33,7 +33,7 @@ $(document).ready(function () {
         $($whichMain).empty();
       }
       
-      deleteMarkers();
+      //deleteMarkers();
       // Looping through each item from result
       for (var i = 0; i < 3; i++) {
         //Adding Locations of webcam feeds into camMarker array
@@ -66,7 +66,7 @@ $(document).ready(function () {
         webcamDiv(i);
       };
       
-      displayMarkers(camMarkers);
+      //displayMarkers(camMarkers);
     });
   };
   // Calling function
@@ -144,7 +144,7 @@ function displayWebcam() {
       $($whichMain).empty();
     }
     
-    deleteMarkers();
+    //deleteMarkers();
     // Looping through each item from result
     for (var i = 0; i < 3; i++) {
       //Adding Locations of webcam feeds into camMarker array
@@ -176,7 +176,7 @@ function displayWebcam() {
       };
       webcamDiv(i);
     };
-    displayMarkers(camMarkers);
+    //displayMarkers(camMarkers);
 
   });
 };
