@@ -38,6 +38,8 @@ $(document).ready(function () {
       }
       // Looping through each item from result
       for (var i = 0; i < 3; i++) {
+        //Adding Locations of webcam feeds into camMarker array
+        camMarkers.push(response.result.webcams[i].title);
         // Function creating new HTML elements
         function webcamDiv(i) {
           // Variables for finding emebd links and locations for each webcam
@@ -97,41 +99,13 @@ $(document).ready(function () {
       infoWindow.setContent('Geocode location!');
       infoWindow.open(map);
       map.setCenter(position);
-      displayWebcam()
+      displayWebcam();
     })
   }
-
-
-  var geocoder = new google.maps.Geocoder();
 
   $("#submit").on("click", function () {
     geocode($("#address").val());
   })
-
-  function geocodeAddress(geocoder, resultsMap) {
-    console.log("geocodeAddress() called");
-    var address = document.getElementById('address').value;
-    console.log(address);
-    geocoder.geocode({ 'address': address }, function (results, status) {
-      if (status === 'OK') {
-        resultsMap.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-          map: resultsMap,
-          position: results[0].geometry.location
-        });
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
-  }
-
-
-
-
-
-
-
-
 
 
   //----------------------------------------------------------------------------------------------------------------//
@@ -174,6 +148,8 @@ function displayWebcam() {
     }
     // Looping through each item from result
     for (var i = 0; i < 3; i++) {
+      //Adding Locations of webcam feeds into camMarker array
+      camMarkers.push(response.result.webcams[i].title);
       // Function creating new HTML elements
       function webcamDiv(i) {
         // Variables for finding emebd links and locations for each webcam
