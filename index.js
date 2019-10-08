@@ -2,10 +2,8 @@
 $(document).ready(function () {
 
   //----------------------------------------------------------------------------------------------------------------//
-  //                                           Webcam Display Stuff
+  //                                           Webcam Display Markers Stuff
   //----------------------------------------------------------------------------------------------------------------//
-
-  // Calling function
 
 
   //----------------------------------------------------------------------------------------------------------------//
@@ -34,8 +32,12 @@ $(document).ready(function () {
         var $whichMain = "#main" + i;
         $($whichMain).empty();
       }
+      
+      deleteMarkers();
       // Looping through each item from result
       for (var i = 0; i < 3; i++) {
+        //Adding Locations of webcam feeds into camMarker array
+        camMarkers.push(response.result.webcams[i].title);
         // Function creating new HTML elements
         function webcamDiv(i) {
           // Variables for finding emebd links and locations for each webcam
@@ -63,6 +65,8 @@ $(document).ready(function () {
         };
         webcamDiv(i);
       };
+      
+      displayMarkers(camMarkers);
     });
   };
   // Calling function
@@ -88,49 +92,20 @@ $(document).ready(function () {
       var position = response.results[0].geometry.location;
       latitudeLoc = response.results[0].geometry.location.lat;
       longitudeLoc = response.results[0].geometry.location.lng;
-      console.log("this", latitudeLoc);
+      console.log(latitudeLoc);
       console.log(longitudeLoc);
 
       infoWindow.setPosition(position);
       infoWindow.setContent('Geocode location!');
       infoWindow.open(map);
       map.setCenter(position);
-      displayWebcam()
+      displayWebcam();
     })
   }
-
-
-  var geocoder = new google.maps.Geocoder();
 
   $("#submit").on("click", function () {
     geocode($("#address").val());
   })
-
-  function geocodeAddress(geocoder, resultsMap) {
-    console.log("geocodeAddress() called");
-    var address = document.getElementById('address').value;
-    console.log(address);
-    geocoder.geocode({ 'address': address }, function (results, status) {
-      if (status === 'OK') {
-        resultsMap.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-          map: resultsMap,
-          position: results[0].geometry.location
-        });
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
-  }
-
-
-
-
-
-
-
-
-
 
   //----------------------------------------------------------------------------------------------------------------//
   //                                           Other Stuff
@@ -145,6 +120,7 @@ var map;
 var infoWindow;
 var latitudeLoc;
 var longitudeLoc;
+var camMarkers = [];
 
 // Function for displaying webcam feeds
 function displayWebcam() {
@@ -167,8 +143,12 @@ function displayWebcam() {
       var $whichMain = "#main" + i;
       $($whichMain).empty();
     }
+    
+    deleteMarkers();
     // Looping through each item from result
     for (var i = 0; i < 3; i++) {
+      //Adding Locations of webcam feeds into camMarker array
+      camMarkers.push(response.result.webcams[i].title);
       // Function creating new HTML elements
       function webcamDiv(i) {
         // Variables for finding emebd links and locations for each webcam
@@ -196,6 +176,8 @@ function displayWebcam() {
       };
       webcamDiv(i);
     };
+    displayMarkers(camMarkers);
+
   });
 };
 
@@ -228,3 +210,48 @@ function createMap() {
     handleLocationError('No geolocation available.', map.getCenter());
   }
 }
+
+// 
+
+//ONLY NEEDS LAT AND LONG VALUES IN ARR INSTEAD OF STRING
+
+// Sets the map on all markers in the array.
+// function setMapOnAll(map) {
+//   for (var i = 0; i < camMarkers.length; i++) {
+//       camMarkers[i].setMap(map);
+//   }
+// }
+
+// // Removes the markers from the map, but keeps them in the array.
+// function clearMarkers() {
+//   setMapOnAll(null);
+// }
+
+// // Deletes all markers in the array by removing references to them.
+// function deleteMarkers() {
+//   clearMarkers();
+//   camMarkers = [];
+// }
+
+// //geolocation()?
+
+// function displayMarkers(arr) {
+//   console.log(arr);
+//   for (var i = 0; i < arr.length; i++) {
+//       var arr = arr[i];
+//       generateMarker(arr);
+//   }
+// }
+// function generateMarker(arr) {
+//   var marker = new google.maps.Marker({
+//       position: arr.geometry.location,
+//       map: map,
+//       title: arr.name
+//   });
+//   camMarkers.push(marker);
+// }
+
+// // Shows any markers currently in the array.
+// function showMarkers() {
+//   setMapOnAll(map);
+// }
