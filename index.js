@@ -102,7 +102,7 @@ $(document).ready(function () {
       displayWebcam();
     })
   }
-
+  
   $("#submit").on("click", function () {
     geocode($("#address").val());
   })
