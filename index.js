@@ -32,6 +32,8 @@ $(document).ready(function () {
         var $whichMain = "#main" + i;
         $($whichMain).empty();
       }
+      
+      deleteMarkers();
       // Looping through each item from result
       for (var i = 0; i < 3; i++) {
         //Adding Locations of webcam feeds into camMarker array
@@ -63,6 +65,8 @@ $(document).ready(function () {
         };
         webcamDiv(i);
       };
+      
+      displayMarkers(camMarkers);
     });
   };
   // Calling function
@@ -96,8 +100,6 @@ $(document).ready(function () {
       infoWindow.open(map);
       map.setCenter(position);
       displayWebcam();
-      deleteMarkers();
-      displayMarkers(camMarkers);
     })
   }
 
@@ -141,6 +143,8 @@ function displayWebcam() {
       var $whichMain = "#main" + i;
       $($whichMain).empty();
     }
+    
+    deleteMarkers();
     // Looping through each item from result
     for (var i = 0; i < 3; i++) {
       //Adding Locations of webcam feeds into camMarker array
@@ -172,6 +176,8 @@ function displayWebcam() {
       };
       webcamDiv(i);
     };
+    displayMarkers(camMarkers);
+
   });
 };
 
@@ -205,34 +211,47 @@ function createMap() {
   }
 }
 
+// 
+
+//ONLY NEEDS LAT AND LONG VALUES IN ARR INSTEAD OF STRING
+
 // Sets the map on all markers in the array.
-function setMapOnAll(map) {
-  for (var i = 0; i < camMarkers.length; i++) {
-      camMarkers[i].setMap(map);
-  }
-}
+// function setMapOnAll(map) {
+//   for (var i = 0; i < camMarkers.length; i++) {
+//       camMarkers[i].setMap(map);
+//   }
+// }
 
-// Removes the markers from the map, but keeps them in the array.
-function clearMarkers() {
-  setMapOnAll(null);
-}
+// // Removes the markers from the map, but keeps them in the array.
+// function clearMarkers() {
+//   setMapOnAll(null);
+// }
 
-// Deletes all markers in the array by removing references to them.
-function deleteMarkers() {
-  clearMarkers();
-  camMarkers = [];
-}
+// // Deletes all markers in the array by removing references to them.
+// function deleteMarkers() {
+//   clearMarkers();
+//   camMarkers = [];
+// }
 
-//geolocation()?
+// //geolocation()?
 
-function displayMarkers(arr) {
-  console.log(arr);
-  for (var i = 0; i < places.length; i++) {
-      showMarkers();
-  }
-}
+// function displayMarkers(arr) {
+//   console.log(arr);
+//   for (var i = 0; i < arr.length; i++) {
+//       var arr = arr[i];
+//       generateMarker(arr);
+//   }
+// }
+// function generateMarker(arr) {
+//   var marker = new google.maps.Marker({
+//       position: arr.geometry.location,
+//       map: map,
+//       title: arr.name
+//   });
+//   camMarkers.push(marker);
+// }
 
-// Shows any markers currently in the array.
-function showMarkers() {
-  setMapOnAll(map);
-}
+// // Shows any markers currently in the array.
+// function showMarkers() {
+//   setMapOnAll(map);
+// }
