@@ -12,7 +12,7 @@ Jet: #303030; */
 }
 
 body {
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Raleway', san-serif;
     color: #F7F7F7;
     letter-spacing: 1.5px;
     font-weight: 700;
@@ -22,7 +22,7 @@ body {
 
    
    h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Roboto', san-serif;
    }
 
 .nav-wrapper {
@@ -31,6 +31,7 @@ body {
     padding-left: 10%;
     color: black;
     font-size: 35px;
+
     
 }
 
@@ -87,7 +88,6 @@ h4 {
     background-color:#eeeeee;
     width: 80%;
     margin-left: 10%;
-    border-radius: 15px;
     padding-top: 7px;
  }
 
@@ -106,32 +106,32 @@ h4 {
   }
 
   #mapSearch {
-    background-color: #fff;
+    background-color:#eeeeee;
     padding: 5px;
-    border: 1px solid #999;
     text-align: center;
     font-family: 'Cabin','sans-serif';
     line-height: 30px;
     padding-left: 10px;
     float: left;
   }
+#mapSearch input[type=text]:focus {
+    box-shadow: 0 1px 0 0 #1b5e20;
+    border-bottom: #1b5e20;
+  }
 
   #randBtnDiv {
     background-color: #1b5e20;
-    color: white;
   }
-
-  /* #submit {
-    background-color: #1b5e20;
-    padding: none;
-  } */
 
 .btn {
     background-color: #1b5e20;\
-    color: white;
     
 }
 
+.btn:hover {
+    background-color:#1b5e20;
+    color: white;
+}
 
 
 @media (max-width: 950px) {
