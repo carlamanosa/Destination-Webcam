@@ -7,40 +7,50 @@ Jet: #303030; */
 
 * {
     box-sizing: border-box;
+   
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Judson', sans-serif;
+    font-family: 'Raleway', san-serif;
     color: #F7F7F7;
-    background-image: url(Temp/images/background2.png);
-    background-size: cover;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color:black;
+    background-color: #eeeeee;
    }
 
    
    h1, h2, h3, h4, h5, h6 {
-    font-family: 'Judson', sans-serif;
+    font-family: 'Raleway', san-serif;
    }
 
 .nav-wrapper {
-    background-color: rgba(0, 0, 0, 0);
+    /* background-color: rgba(0, 0, 0, 0); */
     text-align: left;
     padding-left: 10%;
-    color: #F7F7F7;
+    color: black;
     font-size: 35px;
-    padding-top: 10px;
+
+    
 }
 
 /* start section */
 
 #start-section {
+    background-image: url(Temp/images/background2.png);
+    background-size: cover;
     padding-right: 10%;
-    padding-top: 59px;
-    height: 90vh;
+    height: 100vh;
 }
+
 
 #begin {
     background-color: #1b5e20;
-}
+    font-size: 20px;
+    color: white;
+    float: right;    
+  }
 
 #main-container{
     background-size: cover;
@@ -53,15 +63,15 @@ body {
 h1 {
     text-align: right;
     font-size: 30px;
+    padding-top: 114px;
+    color: white;
+
 }
 
 h4 {
     text-align: right;
     font-size: 20px;
-}
-
-#begin {
-    float: right;
+    color: white;
 }
 
 #map {
@@ -75,7 +85,10 @@ h4 {
  }
  
 #mapSearch {
-    background-color: white;
+    background-color:#eeeeee;
+    width: 80%;
+    margin-left: 10%;
+    padding-top: 7px;
  }
 
  .jumbo-map {
@@ -93,23 +106,33 @@ h4 {
   }
 
   #mapSearch {
-    background-color: #fff;
+    background-color:#eeeeee;
     padding: 5px;
-    border: 1px solid #999;
     text-align: center;
-    font-family: 'Roboto','sans-serif';
+    font-family: 'Cabin','sans-serif';
     line-height: 30px;
     padding-left: 10px;
     float: left;
   }
-
-  #randomBtnDiv{
-      /* float: right; */
+#mapSearch input[type=text]:focus {
+    box-shadow: 0 1px 0 0 #1b5e20;
+    border-bottom: #1b5e20;
   }
 
-  #submit {
-      /* float: right; */
+  #randBtnDiv {
+    background-color: #1b5e20;
   }
+
+.btn {
+    background-color: #1b5e20;\
+    
+}
+
+.btn:hover {
+    background-color:#1b5e20;
+    color: white;
+}
+
 
 @media (max-width: 950px) {
     #main0 {
