@@ -121,12 +121,17 @@ h4 {
 
   #randBtnDiv {
     background-color: #1b5e20;
+    color: white;
   }
+#submit {
+    color: white;
+}
 
 .btn {
-    background-color: #1b5e20;\
-    
+    background-color: #1b5e20;
+    color:white;
 }
+
 
 .btn:hover {
     background-color:#1b5e20;
