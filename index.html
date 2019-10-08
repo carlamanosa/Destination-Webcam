@@ -15,40 +15,45 @@
 </head>
 
 <body>
-    <!-- Nav Bar Header with our Website's Name -->
-    <nav class="transparent z-depth-0">
-        <div class="nav-wrapper">
-            <a href="#" class="center">Destination Webcam</a>
-        </div>
-    </nav>
-  
+
+
     <!-- First container/ landing -->
     <div class="section" id="start-section">
+        <!-- Nav Bar Header with our Website's Name -->
+        <nav class="transparent z-depth-0">
+            <div class="nav-wrapper">
+                <a href="#" class="center">Destination Webcam</a>
+            </div>
+        </nav>
         <h1>See your destinations in real time</h1>
         <h4>Curiousity will only take you so far... </h4>
         <br>
         <br>
-        <a href="#main-container" class="waves-effect waves-light btn-large" id="begin">Start Search</a>
+        <a href="#bottomPage" class="waves-effect waves-light btn-large" id="begin">Start Search</a>
     </div>
-    <!-- Section: (not a jumbotron) map -->
-    <div class="map-wrap container">
-        <div class="row">
-            <div class="col s6 offset-s2" id="mapSearch">
-                <input id="randBtnDiv" type="button" value="Random" class="vl mapButtons waves-effect waves-light btn lime" style="float: right">
-                <input id="submit" type="button" value="Search" class="mapButtons waves-effect waves-light btn lime" style="float: right">                
-                <div style="overflow: hidden; padding-right: .5em;">
-                    <input id="address" type="text" style="width: 100%;" />
-                </div>                
-            </div>   
-        </div>
-    </div>
-  
+
+
     <!-- Map Display -->
     <div class="jumbo-map">
         <div id="map"></div>
     </div>
 
-    <input id="randBtnDiv" type="button" value="Random" class="vl mapButtons waves-effect waves-light btn lime">
+    <!-- Section: (not a jumbotron) map -->
+    <div class="map-wrap container">
+        <div class="row">
+            <div class="col s6 offset-s2" id="mapSearch">
+                <input id="randBtnDiv" type="button" value="Random"
+                    class="vl mapButtons waves-effect waves-light btn lime" style="float: right">
+                <input id="submit" type="button" value="Search" class="mapButtons waves-effect waves-light btn lime"
+                    style="float: right">
+                <div style="overflow: hidden; padding-right: .5em;">
+                    <input id="address" type="text" style="width: 100%;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="bottomPage"></a>
 
     <!-- Row 2: Feed Frames -->
     <div class="row main-feeds">
@@ -57,6 +62,7 @@
         <div class="col s12 m4" id="main2"></div>
     </div>
     <!-- End Row 2 -->
+
 
 
     <!-- (BONUS) On Water Div-->
