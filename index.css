@@ -10,15 +10,17 @@ Jet: #303030; */
 }
 
 body {
-    font-family: 'Judson', sans-serif;
+    font-family: 'Cabin', sans-serif;
     color: #F7F7F7;
     background-image: url(Temp/images/background2.png);
     background-size: cover;
+    letter-spacing: 1.5px;
+    font-weight: 700;
    }
 
    
    h1, h2, h3, h4, h5, h6 {
-    font-family: 'Judson', sans-serif;
+    font-family: 'Cabin', sans-serif;
    }
 
 .nav-wrapper {
@@ -97,7 +99,7 @@ h4 {
     padding: 5px;
     border: 1px solid #999;
     text-align: center;
-    font-family: 'Roboto','sans-serif';
+    font-family: 'Cabin','sans-serif';
     line-height: 30px;
     padding-left: 10px;
     float: left;
