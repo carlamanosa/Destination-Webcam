@@ -29,6 +29,8 @@ $(document).ready(function () {
     }).then(function (response) {
       // Console logging response
       console.log(response);
+      // Clearing camMarkers arr
+      camMarkers.length = 0;
       // Looping through each prev display to clear it
       for (var i = 0; i < 3; i++) {
         var $whichMain = "#main" + i;
@@ -145,6 +147,7 @@ var map;
 var infoWindow;
 var latitudeLoc;
 var longitudeLoc;
+var camMarkers = [];
 
 // Function for displaying webcam feeds
 function displayWebcam() {
@@ -162,6 +165,8 @@ function displayWebcam() {
   }).then(function (response) {
     // Console logging response
     console.log(response);
+    // Clearing camMarkers arr
+    camMarkers.length = 0;
     // Looping through each prev display to clear it
     for (var i = 0; i < 3; i++) {
       var $whichMain = "#main" + i;
